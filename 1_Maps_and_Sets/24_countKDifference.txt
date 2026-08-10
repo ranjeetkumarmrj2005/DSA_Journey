@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int countKDifference(vector<int>& nums, int k) {
+        int n=nums.size();
+        unordered_map<int,int>m;
+        int count=0;
+        for(auto val: nums){
+            if(m.find(val-k)!=m.end()){
+                count=count+m[val-k];
+            }
+            if(m.find(val+k)!=m.end()){
+                count=count+m[val+k];
+            }
+            m[val]++;
+            
+        }
+        return count;
+    }
+};
