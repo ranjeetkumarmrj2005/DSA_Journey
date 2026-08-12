@@ -1,0 +1,25 @@
+class Solution {
+  public:
+    double fractionalKnapsack(vector<int>& val, vector<int>& wt, int capacity) {
+        // code here
+        priority_queue< pair<double,int> >pq;
+        int n=val.size();
+        for(int i=0;i<n;i++){
+            double ratio=((double)val[i]/wt[i]);
+            pq.push({ratio,wt[i]});
+        }
+        double sum=0;
+        while(pq.size()>0){
+            if(capacity>=pq.top().second){
+                sum=sum+pq.top().first* pq.top().second;
+                capacity=capacity-pq.top().second;
+                pq.pop();
+            }
+            else{
+                sum=sum+pq.top().first*capacity;
+                break;
+            }
+        }
+        return sum;
+    }
+};
