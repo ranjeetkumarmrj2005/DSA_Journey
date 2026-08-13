@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
+        int m=boxTypes.size();
+        vector< pair<int,int> >v;
+        priority_queue< pair< int,int> >pq;
+        for(int i=0;i<m;i++){
+            pq.push({boxTypes[i][1],boxTypes[i][0]});
+        }
+        int ans=0;
+        while(pq.size()>0){
+            int boxtype=pq.top().second;
+            int boxtyepunit=pq.top().first;
+            if(truckSize>=boxtype){
+                ans=ans+boxtype*boxtyepunit;
+                truckSize=truckSize-boxtype;
+                pq.pop();
+            }
+            else{
+                ans=ans+boxtyepunit*truckSize;
+                break;
+            }
+        }
+        return ans;
+    }
+};
