@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int helper(int start_row, int start_col, int end_row, int end_col){
+        if(start_row == end_row && start_col == end_col){
+            return 1;
+        }
+        if(start_row > end_row || start_col > end_col){
+            return 0;
+        }
+        int rightways= helper(start_row, start_col+1, end_row, end_col); 
+        int downways= helper(start_row+1, start_col, end_row, end_col);
+        return rightways+downways;
+
+    }
+    int uniquePaths(int m, int n) {
+        return helper(0,0,m-1,n-1);
+    }
+};
