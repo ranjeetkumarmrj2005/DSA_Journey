@@ -1,0 +1,27 @@
+
+
+
+
+class Solution {
+public:
+    int reverse(int x) {
+        long long p=x;
+        int long long y=0;
+        if(p<0){
+            p=-p;
+            while(p>0){
+                y=y*10 +p%10;
+                p=p/10;  
+            }
+            y=-y;
+        }
+        else {
+            while(p>0){
+                y=y*10 +p%10;
+                p=p/10;  
+            }
+        }
+        if(y>INT_MAX || y<INT_MIN) return 0;
+        else return y;
+    }
+};
