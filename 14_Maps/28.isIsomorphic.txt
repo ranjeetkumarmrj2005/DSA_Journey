@@ -1,0 +1,24 @@
+
+
+
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        
+        unordered_map<char, int> map1;
+        unordered_map<char, int> map2;
+
+        for (int i = 0; i < s.length(); i++) {
+            char letterS = s[i];
+            char letterT = t[i];
+
+            if (map1[letterS] != map2[letterT]) {
+                return false;
+            }
+            map1[letterS] = i + 1;
+            map2[letterT] = i + 1;
+        }
+        
+        return true;
+    }
+};
