@@ -1,0 +1,487 @@
+
+
+
+// ============================================================
+// 1. VECTOR
+// ============================================================
+
+#include <vector>
+using namespace std;
+
+vector<int> v = {1, 2, 3};
+
+v.push_back(4);          // Add at end
+v.pop_back();            // Remove last element
+
+v.size();                // Number of elements
+v.empty();               // true if empty
+v.clear();               // Remove all elements
+
+v.front();               // First element
+v.back();                // Last element
+
+v.begin();               // Iterator to first element
+v.end();                 // Iterator past last element
+
+v.insert(v.begin() + 1, 10);  // Insert 10 at index 1
+v.erase(v.begin() + 1);       // Remove element at index 1
+
+
+// ============================================================
+// 2. STRING
+// ============================================================
+
+#include <string>
+
+string s = "hello";
+
+s.size();                // Length
+s.length();              // Length
+
+s.empty();               // Check empty
+
+s.push_back('a');        // Add character at end
+s.pop_back();            // Remove last character
+
+s.front();               // First character
+s.back();                // Last character
+
+s.substr(1, 3);          // Substring starting at 1, length 3
+
+s.find("ll");            // Find substring
+s.find('l');             // Find character
+
+s.erase(1, 2);           // Remove 2 chars starting from index 1
+
+s.insert(1, "abc");      // Insert string at index 1
+
+reverse(s.begin(), s.end());
+
+
+// ============================================================
+// 3. ALGORITHM
+// ============================================================
+
+#include <algorithm>
+
+sort(v.begin(), v.end());            // Ascending
+sort(v.rbegin(), v.rend());          // Descending
+
+reverse(v.begin(), v.end());         // Reverse
+
+swap(a, b);                          // Swap
+
+min(a, b);                           // Minimum of 2
+max(a, b);                           // Maximum of 2
+
+min({a, b, c, d});                   // Minimum of multiple
+max({a, b, c, d});                   // Maximum of multiple
+
+*min_element(v.begin(), v.end());    // Minimum element
+*max_element(v.begin(), v.end());    // Maximum element
+
+find(v.begin(), v.end(), x);         // Find x
+
+count(v.begin(), v.end(), x);        // Count x
+
+binary_search(v.begin(), v.end(), x); // Check if x exists
+// vector must be sorted
+
+lower_bound(v.begin(), v.end(), x);  // First position >= x
+upper_bound(v.begin(), v.end(), x);  // First position > x
+
+next_permutation(v.begin(), v.end());
+
+prev_permutation(v.begin(), v.end());
+
+
+// ============================================================
+// 4. UNORDERED_MAP
+// ============================================================
+
+#include <unordered_map>
+
+unordered_map<char, int> mp;
+
+mp[key]++;                         // Increase frequency
+
+mp[key] = value;                   // Insert/update
+
+mp.find(key);                      // Find key
+
+mp.count(key);                     // 1 if exists, 0 otherwise
+
+mp.erase(key);                     // Remove key
+
+mp.size();                         // Number of keys
+
+mp.empty();                        // Check empty
+
+mp.clear();                        // Remove everything
+
+mp.begin();
+mp.end();
+
+
+// ============================================================
+// 5. MAP
+// ============================================================
+
+#include <map>
+
+map<int, int> mp;
+
+mp[key] = value;
+
+mp.find(key);
+
+mp.count(key);
+
+mp.erase(key);
+
+mp.size();
+
+mp.empty();
+
+mp.clear();
+
+
+// ============================================================
+// 6. UNORDERED_SET
+// ============================================================
+
+#include <unordered_set>
+
+unordered_set<int> st;
+
+st.insert(x);                      // Insert
+
+st.find(x);                        // Find
+
+st.count(x);                       // 1 if exists
+
+st.erase(x);                       // Remove
+
+st.size();
+
+st.empty();
+
+st.clear();
+
+
+// ============================================================
+// 7. SET
+// ============================================================
+
+#include <set>
+
+set<int> st;
+
+st.insert(x);
+
+st.find(x);
+
+st.count(x);
+
+st.erase(x);
+
+st.size();
+
+st.empty();
+
+st.clear();
+
+*st.begin();                       // Smallest element
+*st.rbegin();                      // Largest element
+
+
+// ============================================================
+// 8. STACK
+// ============================================================
+
+#include <stack>
+
+stack<int> st;
+
+st.push(x);                        // Add
+
+st.pop();                          // Remove top
+
+st.top();                          // Top element
+
+st.empty();
+
+st.size();
+
+
+// ============================================================
+// 9. QUEUE
+// ============================================================
+
+#include <queue>
+
+queue<int> q;
+
+q.push(x);                         // Add at back
+
+q.pop();                           // Remove front
+
+q.front();                         // First element
+
+q.back();                          // Last element
+
+q.empty();
+
+q.size();
+
+
+// ============================================================
+// 10. DEQUE
+// ============================================================
+
+#include <deque>
+
+deque<int> dq;
+
+dq.push_back(x);
+
+dq.push_front(x);
+
+dq.pop_back();
+
+dq.pop_front();
+
+dq.front();
+
+dq.back();
+
+dq.size();
+
+dq.empty();
+
+
+// ============================================================
+// 11. PRIORITY QUEUE
+// ============================================================
+
+#include <queue>
+
+// MAX HEAP
+priority_queue<int> pq;
+
+pq.push(x);
+
+pq.pop();
+
+pq.top();
+
+pq.size();
+
+pq.empty();
+
+
+// MIN HEAP
+priority_queue<int, vector<int>, greater<int>> pq;
+
+pq.push(x);
+
+pq.pop();
+
+pq.top();
+
+
+// ============================================================
+// 12. NUMERIC
+// ============================================================
+
+#include <numeric>
+
+accumulate(v.begin(), v.end(), 0);        // Sum
+
+accumulate(v.begin(), v.end(), 1,
+           multiplies<int>());            // Product
+
+iota(v.begin(), v.end(), 1);              // Fill: 1,2,3,...
+
+gcd(a, b);                                // GCD
+
+lcm(a, b);                                // LCM
+
+
+// ============================================================
+// 13. MATH
+// ============================================================
+
+#include <cmath>
+
+sqrt(x);                    // Square root
+
+pow(x, y);                  // x^y
+
+ceil(x);                    // Round upward
+
+floor(x);                   // Round downward
+
+abs(x);                     // Absolute value
+
+round(x);                   // Nearest integer
+
+log(x);                     // Natural logarithm
+
+log10(x);                   // Log base 10
+
+exp(x);                     // e^x
+
+
+// ============================================================
+// 14. CHARACTER FUNCTIONS
+// ============================================================
+
+#include <cctype>
+
+isdigit(c);                 // Is digit?
+
+isalpha(c);                 // Is alphabet?
+
+islower(c);                 // Is lowercase?
+
+isupper(c);                 // Is uppercase?
+
+tolower(c);                 // Convert to lowercase
+
+toupper(c);                 // Convert to uppercase
+
+isspace(c);                 // Is whitespace?
+
+
+// ============================================================
+// 15. STRING → NUMBER
+// ============================================================
+
+#include <string>
+
+stoi("123");                // string → int
+
+stol("123");                // string → long
+
+stoll("123");               // string → long long
+
+stof("12.3");               // string → float
+
+stod("12.3");               // string → double
+
+stold("12.3");              // string → long double
+
+
+// ============================================================
+// 16. NUMBER → STRING
+// ============================================================
+
+to_string(123);
+
+to_string(12.34);
+
+
+// ============================================================
+// 17. PAIR
+// ============================================================
+
+#include <utility>
+
+pair<int, string> p;
+
+p.first;
+
+p.second;
+
+make_pair(10, "hello");
+
+
+// ============================================================
+// 18. ITERATORS
+// ============================================================
+
+v.begin();                  // Beginning
+
+v.end();                    // End
+
+v.rbegin();                 // Reverse beginning
+
+v.rend();                   // Reverse end
+
+next(it);                   // Move iterator forward
+
+prev(it);                   // Move iterator backward
+
+
+// ============================================================
+// 19. COMMON LOOP SHORTCUTS
+// ============================================================
+
+// Range-based loop
+
+for(auto x : v) {
+    cout << x;
+}
+
+// Reference (can modify elements)
+
+for(auto &x : v) {
+    x++;
+}
+
+// Const reference (cannot modify)
+
+for(const auto &x : v) {
+    cout << x;
+}
+
+
+// ============================================================
+// 20. IMPORTANT ARRAY FUNCTIONS
+// ============================================================
+
+int arr[] = {1, 2, 3, 4, 5};
+
+sort(arr, arr + 5);
+
+reverse(arr, arr + 5);
+
+*min_element(arr, arr + 5);
+
+*max_element(arr, arr + 5);
+
+find(arr, arr + 5, 3);
+
+count(arr, arr + 5, 3);
+
+
+
+
+vector
+string
+sort()
+reverse()
+min()
+max()
+min_element()
+max_element()
+find()
+count()
+lower_bound()
+upper_bound()
+
+unordered_map
+unordered_set
+
+stack
+queue
+priority_queue
+
+accumulate()
+abs()
+sqrt()
+pow()
+
+stoi()
+to_string()
