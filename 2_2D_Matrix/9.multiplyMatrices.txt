@@ -1,0 +1,34 @@
+
+
+class Solution {
+public:
+    vector<vector<int>> multiplyMatrices(vector<vector<int>> &a, vector<vector<int>> &b) {
+        if (a.empty() || b.empty()) return {};
+        
+        int m = a.size();       // Rows in A
+        int n = a[0].size();    // Columns in A
+        int p = b.size();       // Rows in B
+        int q = b[0].size();    // Columns in B
+        
+        // Mathematical requirement: Columns of A must equal Rows of B
+        if (n != p) {
+            return {}; // In a real system, you might throw std::invalid_argument here
+        }
+        
+        // The resulting matrix C must be m x q
+        vector<vector<int>> v(m, vector<int>(q, 0));
+        
+        // i iterates through rows of A (0 to m)
+        for (int i = 0; i < m; i++) {
+            // j iterates through columns of B (0 to q)
+            for (int j = 0; j < q; j++) {
+                // k iterates through the shared dimension (0 to n)
+                for (int k = 0; k < n; k++) {
+                    v[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+        
+        return v;
+    }
+};
