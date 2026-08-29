@@ -1,0 +1,18 @@
+
+
+class Solution {
+  public:
+    int largestPrimeFactor(int n) {
+        if(n<=2) return n;
+        int i=2;
+        int largest_prime=1;
+        while(n!=1){
+            while(n%i==0){
+                n=n/i;
+                largest_prime=max(largest_prime,i);
+            }
+            i++;
+        }
+        return largest_prime;
+    }
+};

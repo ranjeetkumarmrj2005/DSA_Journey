@@ -1,0 +1,22 @@
+
+
+
+class Solution {
+  public:
+    bool isPrime(int n){
+        if(n==1) return false;
+        if(n==2) return true;
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0) return false;
+        }
+        return true;
+    }
+    vector<int> primeRange(int l, int r) {
+        vector<int>v;
+        for(int i=l;i<=r;i++){
+            bool flag=isPrime(i);
+            if(flag==true) v.push_back(i);
+        }
+        return v;
+    }
+};

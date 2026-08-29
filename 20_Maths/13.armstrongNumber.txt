@@ -1,0 +1,18 @@
+
+
+
+class Solution {
+  public:
+    bool armstrongNumber(int n) {
+        int target=n;
+        int final=0;
+        while(n>0){
+            int rem=n%10;
+            final=final+pow(rem,3);
+            n=n/10;
+        }
+        if(final==target) return true;
+        else return false;
+        
+    }
+};
