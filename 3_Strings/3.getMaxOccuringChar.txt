@@ -1,0 +1,25 @@
+
+
+class Solution {
+  public:
+    char getMaxOccuringChar(string& s) {
+        sort(s.begin(),s.end());
+        int n=s.size();
+        int maxcount=1;
+        char ch=s[0];
+        for(int i=1;i<n;i++){
+            int count=1;
+            char temp;
+            while(i<n && s[i]==s[i-1]){
+                count++;
+                temp=s[i];
+                i++;
+            }
+            if(count>maxcount){
+                maxcount=count;
+                ch=temp;
+            }
+        }
+        return ch;
+    }
+};

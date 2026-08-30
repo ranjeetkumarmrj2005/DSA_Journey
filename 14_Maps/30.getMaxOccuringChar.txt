@@ -1,0 +1,31 @@
+
+
+
+class Solution {
+  public:
+    char getMaxOccuringChar(string& s) {
+        int n=s.size();
+        unordered_map<char,int>m;
+        for(int i=0;i<n;i++){
+            m[s[i]]++;
+        }
+        
+        int count=1;
+        char ch=s[0];
+        
+        for(int i=0;i<n;i++){
+            if( m[s[i]] > count) {
+                count=m[s[i]];
+                ch=s[i];
+            }
+            else{
+                if( (m[s[i]] == count) && (int)s[i] < (int)ch){
+                    ch=s[i];
+                }
+            }
+            
+        }
+        
+        return ch;
+    }
+};
