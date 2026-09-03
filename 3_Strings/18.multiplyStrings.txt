@@ -1,0 +1,72 @@
+
+
+class Solution {
+  public:
+    string multiplyStrings(string &s1, string &s2) {
+        
+        if(s1=="0" || s2=="0")  return "0";
+        
+        int n1=s1.size();
+        int i=0;
+        int sign1=1;
+        if(i<n1 && (s1[i]=='-' || s1[i]=='+') ){
+            sign1=(s1[i]=='-')?-1:1;
+            i++;
+        }
+        while(i<n1 && s1[i]=='0'){
+            i++;
+        }
+        string ans1="";
+        while(i<n1){
+            ans1.push_back(s1[i]);
+            i++;
+        }
+        
+        int n2=s2.size();
+        int j=0;
+        int sign2=1;
+        if(j<n2 && (s2[j]=='-' || s2[j]=='+')){
+            sign2=(s2[j]=='-')?-1:1;
+            j++;
+        }
+        while(j<n2 && s2[j]=='0'){
+            j++;
+        }
+        string ans2="";
+        while(j<n2){
+            ans2.push_back(s2[j]);
+            j++;
+        }
+        
+        int m=ans1.size();
+        int n=ans2.size();
+        
+        if(ans1=="" || ans2=="") return "0";
+        vector<int>result(m+n,0);
+        
+        for(int i=m-1;i>=0;i--){
+            for(int j=n-1;j>=0;j--){
+                int digit1=ans1[i]-'0';
+                int digit2=ans2[j]-'0';
+                int prod=digit1*digit2;
+                result[i+j+1]=result[i+j+1]+prod;
+                result[i+j]=result[i+j]+result[i+j+1]/10;
+                result[i+j+1]=result[i+j+1]%10;
+            }
+        }
+        
+        int k=0;
+        while(k<result.size() && result[k]==0){
+            k++;
+        }
+        
+        string ans="";
+        if( (sign1==-1 && sign2==1) || (sign1==1 && sign2==-1) ) ans.push_back('-');
+        
+        while(k<result.size()){
+            ans.push_back(result[k]+'0');
+            k++;
+        }
+        return ans; 
+    }
+};
