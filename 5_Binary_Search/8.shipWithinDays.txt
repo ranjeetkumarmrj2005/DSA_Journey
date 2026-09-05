@@ -1,0 +1,42 @@
+
+
+class Solution {
+public:
+    bool helper(int mid,vector<int>& weights, int days){
+        int n=weights.size();
+        int m=mid;
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(m>=weights[i]){
+                m=m-weights[i];
+            }
+            else{
+                count++;
+                m=mid;
+                m=m-weights[i];
+            }
+        }
+        if(count+1>days) return false;
+        else return true;
+    }
+    int shipWithinDays(vector<int>& weights, int days) {
+        int n=weights.size();
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum=sum+weights[i];
+        }
+        int mx=*max_element(weights.begin(),weights.end());
+        int low=mx;
+        int high=sum;
+        int minCapacity=sum;
+        while(low<=high){
+            int mid=low+ (high-low)/2;
+            if(helper(mid,weights,days)==true){
+                minCapacity=mid;
+                high=mid-1;
+            }
+            else low=mid+1;
+        }
+        return minCapacity;
+    }
+};

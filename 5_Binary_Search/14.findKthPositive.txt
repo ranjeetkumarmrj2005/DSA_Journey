@@ -1,0 +1,23 @@
+
+
+
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+        int low = 0;
+        int high = arr.size() - 1;
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+            // Calculate how many numbers are missing before arr[mid]
+            int missing = arr[mid] - (mid + 1);
+            
+            if (missing < k) low = mid + 1;
+            else  high = mid - 1;
+        }
+        
+        // The kth missing number formula simplifies to low + k
+        return low + k;
+    }
+};
