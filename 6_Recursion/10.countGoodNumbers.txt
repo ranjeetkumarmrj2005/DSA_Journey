@@ -1,0 +1,25 @@
+
+
+
+class Solution {
+public:
+    const long long MOD = 1e9 + 7;
+    long long power(int a,long long b){
+        if(b==0) return 1;
+        if(b==1) return a;
+        long long t=power(a,b/2);
+        if(b%2==0) return (t*t)%MOD;
+        else return (t*t*a)%MOD;
+    }
+    int countGoodNumbers(long long n) {
+        if(n==1) return 5;
+        long long ans=0;
+        if(n%2==0){
+            ans=(power(5,n/2)*power(4,n/2))%MOD;
+        }
+        else {
+            ans=(power(5,n/2+1)*power(4,n/2))%MOD;
+        }
+        return ans;
+    }
+};
