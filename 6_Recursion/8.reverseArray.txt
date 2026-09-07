@@ -1,0 +1,15 @@
+
+
+
+class Solution {
+  public:
+    void helper(vector<int> &arr,int i,int j){
+        if(i>j) return;
+        swap(arr[i],arr[j]);
+        helper(arr,i+1,j-1);
+    }
+    void reverseArray(vector<int> &arr) {
+        int n=arr.size();
+       helper(arr,0,n-1);
+    }
+};

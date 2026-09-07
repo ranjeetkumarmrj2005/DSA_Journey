@@ -1,0 +1,11 @@
+
+
+
+class Solution {
+  public:
+    void printNos(int n) {
+        cout<<n<<" ";
+        if(n>1) printNos(n-1);
+        
+    }
+};
