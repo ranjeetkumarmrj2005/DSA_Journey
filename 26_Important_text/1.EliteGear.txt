@@ -1,0 +1,56 @@
+
+
+
+Resume: EliteGear Ecommerce Project
+Option 1 — One-Liner (for a compact resume)
+EliteGear Ecommerce — Built a responsive React SPA with client-side routing, cart/wishlist state management (Context API + localStorage), animated UI (Framer Motion), and real-time product search/filter/sort.
+
+Option 2 — Bullet Points (most common format)
+EliteGear — Sportswear Ecommerce Web App
+Tech Stack: React 19, Vite, React Router, Framer Motion, CSS Modules
+
+Developed a fully responsive single-page ecommerce application with 5 routes and animated page transitions
+Implemented real-time cart and wishlist state management using Context API + useReducer with localStorage persistence
+Built a dynamic product catalog with live search, category filtering, multi-criteria sorting, and client-side pagination
+Created 12+ reusable components (Navbar, ProductCard, StarRating, SearchBar, ImageZoom, etc.) with CSS Modules for scoped styling
+Designed an interactive product detail page with image gallery zoom, size selector, and quantity stepper
+Added 15+ micro-animations using Framer Motion — scroll-reveal, page transitions, hover effects, and animated cart updates
+Integrated toast notification system for real-time user feedback on cart/wishlist actions
+Option 3 — Detailed Project Section (for portfolio/GitHub README)
+EliteGear — Premium Sportswear Ecommerce Platform
+Role: Full-Stack Frontend Developer | Timeline: September 2026
+
+Designed and built a modern, production-ready ecommerce web application from scratch using React and Vite. Migrated an existing static HTML/CSS prototype into a fully interactive single-page application.
+
+Key Achievements:
+
+Architected a component-driven UI with 12+ reusable React components and CSS Modules
+Engineered a state management layer using React Context API and useReducer, with automatic localStorage persistence for cart and wishlist data
+Implemented a product discovery system featuring real-time debounced search, category-based filtering, and multi-criteria sorting (price, rating, name)
+Built a responsive design system with mobile-first breakpoints, glassmorphism navbar, and animated mobile navigation drawer
+Integrated Framer Motion for scroll-triggered animations, staggered list rendering, page transitions, and interactive hover effects
+Achieved a production build of 130KB gzipped with zero build errors
+Skills to Highlight
+Based on this project, you can confidently list these skills:
+
+Technical Skills
+Skill	Evidence from Project
+React.js	Component architecture, hooks (useState, useEffect, useReducer, useContext, useMemo, useRef)
+React Router	Client-side routing with dynamic routes (/product/:id), NavLink active states
+State Management	Context API + useReducer pattern (CartContext, WishlistContext)
+CSS Modules	Scoped component styling, responsive design
+Framer Motion	AnimatePresence, whileInView, layout animations
+Vite	Modern build tooling, HMR, production builds
+JavaScript (ES6+)	Array methods, destructuring, modules, spread operator
+Responsive Design	Mobile-first, media queries, flexbox, CSS Grid
+Web Storage API	localStorage for data persistence
+Git	Version control
+Soft Skills You Can Reference
+Problem Solving — Migrated legacy static site to modern SPA architecture
+UI/UX Thinking — Added search, filters, animations, toast feedback for better UX
+Code Organization — Component-based architecture with separation of concerns
+Pro Tips for Your Resume
+Quantify — "12+ reusable components", "5 routes", "15+ animations", "130KB gzipped bundle"
+Use action verbs — Built, Designed, Implemented, Engineered, Architected, Integrated
+Link it — If you deploy to Vercel/Netlify, add a live demo link. If on GitHub, add the repo link
+Tailor it — If applying for a React role, emphasize hooks and state management. For a UI role, emphasize animations and responsive design

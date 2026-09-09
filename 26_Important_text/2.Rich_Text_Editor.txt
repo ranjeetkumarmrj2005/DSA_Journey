@@ -1,0 +1,237 @@
+
+
+
+================================================================================
+                    APEX EDITOR — RESUME PROJECT DESCRIPTION
+================================================================================
+
+
+PROJECT TITLE
+─────────────
+Apex Editor — Browser-Based Rich Text Editor
+
+
+TECH STACK
+──────────
+React 18 | TipTap v2 (ProseMirror) | Vite 6 | JavaScript (ES6+) | Vanilla CSS | HTML5
+
+
+ONE-LINE SUMMARY (for tight resumes)
+─────────────────────────────────────
+Built a professional-grade browser-based rich text editor with 30+ formatting
+features, Notion-style slash commands, auto-save with version history, and
+multi-format export using React and TipTap (ProseMirror).
+
+
+================================================================================
+                         DETAILED BULLET POINTS
+================================================================================
+
+Pick 4–6 bullets depending on your resume space. They are ordered by impact.
+
+
+CORE ENGINEERING
+────────────────
+•  Architected and developed a full-featured browser-based document editor
+   using React 18 and TipTap v2 (ProseMirror), delivering 30+ rich text
+   formatting capabilities in a modular, component-driven architecture.
+
+•  Built 20+ reusable React components including a dynamic toolbar, floating
+   bubble menu, and contextual slash command system, all following a clean
+   separation of concerns and custom hook patterns.
+
+•  Designed and implemented 3 custom TipTap/ProseMirror extensions — FontSize,
+   Indent, and SlashCommand — extending the editor's core schema and command
+   system beyond the default plugin ecosystem.
+
+•  Engineered a complete auto-save system with localStorage persistence,
+   debounced 5-second intervals, visual save indicators, and named version
+   snapshots allowing users to save, restore, and manage up to 50 document
+   versions.
+
+
+FEATURES & FUNCTIONALITY
+────────────────────────
+•  Implemented comprehensive text formatting — bold, italic, underline,
+   strikethrough, superscript, subscript, 6 heading levels, 10 Google Font
+   families, granular font sizing (10px–64px), text/highlight color pickers
+   with a 35-color palette, and 4-way text alignment.
+
+•  Built a complete table system with visual grid-based insertion, dynamic
+   row/column addition and deletion, cell merging and splitting, and
+   resizable columns — all within the ProseMirror document model.
+
+•  Developed syntax-highlighted code blocks supporting 20+ programming
+   languages (JavaScript, Python, Java, C++, Go, Rust, etc.) using the
+   lowlight library with a custom Catppuccin-inspired color theme.
+
+•  Created a Notion-style slash command menu (/) with keyboard navigation
+   (arrow keys + Enter), real-time filtering, and 11 block types including
+   headings, lists, tables, code blocks, images, and dividers.
+
+•  Implemented a floating bubble menu that appears on text selection,
+   providing quick access to frequently used formatting (bold, italic,
+   underline, code, highlight, link) without reaching for the toolbar.
+
+•  Built a Find & Replace panel with real-time match highlighting,
+   match-by-match navigation, case sensitivity toggle, full regex support,
+   and replace single/replace all functionality.
+
+•  Developed multi-format document export — PDF (via html2pdf.js), styled
+   HTML, plain text, and Markdown (custom HTML-to-Markdown converter) —
+   along with file import for HTML, TXT, and MD formats.
+
+•  Implemented drag-and-drop and clipboard paste support for images,
+   automatically converting uploaded files to base64 for inline embedding.
+
+•  Built task lists with interactive checkboxes, ordered/unordered lists,
+   blockquotes, horizontal rules, and indent/outdent support.
+
+•  Created a document outline sidebar with auto-generated heading tree
+   navigation — clicking any heading scrolls the editor to that section.
+
+•  Added real-time document statistics — live word count, character count
+   (with/without spaces), sentence count, paragraph count, and estimated
+   reading time displayed in both the status bar and sidebar info panel.
+
+
+UI/UX & DESIGN
+──────────────
+•  Designed and implemented a premium dark glassmorphism UI with frosted
+   glass panels (backdrop-filter blur), gradient accents, glow effects,
+   and smooth micro-animations using a comprehensive CSS custom properties
+   design token system.
+
+•  Built a complete design system with 50+ CSS custom properties covering
+   colors, spacing, typography, border radii, shadows, and transitions —
+   ensuring visual consistency across all 20+ components.
+
+•  Implemented focus mode (dims non-active paragraphs), fullscreen mode
+   (distraction-free writing), and a toggleable sidebar for a customizable
+   writing environment.
+
+•  Developed a responsive layout adapting seamlessly from desktop to
+   tablet viewports with styled custom scrollbars and smooth transition
+   animations throughout the interface.
+
+•  Created a keyboard shortcuts system with 25+ shortcuts (Ctrl+B/I/U/S/H,
+   Ctrl+Alt+1–6 for headings, Tab/Shift+Tab for indentation, F11 for
+   fullscreen) and an accessible cheat sheet modal (Ctrl+/).
+
+
+TECHNICAL QUALITY
+─────────────────
+•  Achieved a zero-error production build compiling 2,177 modules through
+   Vite's optimized bundler with automatic code splitting and tree shaking.
+
+•  Utilized React best practices including custom hooks (useAutoSave,
+   useDocumentStats, useVersionHistory), useCallback/useMemo for
+   performance, forwardRef for imperative editor access, and controlled
+   component patterns throughout.
+
+•  Implemented efficient document model operations using ProseMirror's
+   transaction system for Find & Replace, avoiding expensive DOM
+   manipulation in favor of schema-level transformations.
+
+
+================================================================================
+                        SKILLS THIS PROJECT COVERS
+================================================================================
+
+FRONTEND DEVELOPMENT
+   React 18, Component Architecture, Custom Hooks, State Management,
+   Event Handling, Refs & Imperative Handles, Controlled Components
+
+RICH TEXT / EDITOR ENGINEERING
+   TipTap v2, ProseMirror, Document Schema, Custom Extensions,
+   ContentEditable API, Selection & Range APIs, Markdown Parsing
+
+BUILD TOOLS & TOOLING
+   Vite, ES Modules, HMR (Hot Module Replacement), Code Splitting,
+   NPM, Package Management
+
+UI/UX DESIGN & CSS
+   Glassmorphism, CSS Custom Properties (Design Tokens), Responsive Design,
+   Micro-animations, Flexbox/Grid Layouts, Google Fonts Integration,
+   Custom Scrollbars, Backdrop Filters
+
+WEB APIs & BROWSER FEATURES
+   Drag & Drop API, Clipboard API, File Reader API, Blob/URL APIs,
+   localStorage, Fullscreen API, Keyboard Events
+
+FILE I/O & DATA
+   PDF Generation (html2pdf.js), HTML/Markdown/TXT Export,
+   File Import, Base64 Encoding, Version Snapshots
+
+
+================================================================================
+                     SAMPLE RESUME ENTRY (READY TO COPY)
+================================================================================
+
+APEX EDITOR — Browser-Based Rich Text Editor
+React · TipTap/ProseMirror · Vite · JavaScript · CSS
+
+•  Engineered a professional-grade document editor using React 18 and
+   TipTap (ProseMirror) with 30+ formatting features including tables,
+   syntax-highlighted code blocks, and task lists.
+
+•  Implemented Notion-style UX patterns — slash command menu with keyboard
+   navigation, floating bubble menu on text selection, drag-and-drop image
+   upload, and auto-generated document outline navigation.
+
+•  Built an auto-save system with localStorage persistence, named version
+   snapshots (save/restore/delete), and visual save state indicators.
+
+•  Designed a dark glassmorphism UI using a 50+ token CSS design system
+   with frosted glass panels, gradient accents, micro-animations, and
+   responsive layout.
+
+•  Developed multi-format export (PDF, HTML, Markdown, plain text), file
+   import, Find & Replace with regex, and 25+ keyboard shortcuts.
+
+•  Delivered a zero-error production build compiling 2,177 modules with
+   Vite, using custom hooks and ProseMirror transaction-level operations
+   for optimal performance.
+
+
+================================================================================
+                          INTERVIEW TALKING POINTS
+================================================================================
+
+If asked about this project in an interview, here are strong talking points:
+
+1. WHY TIPTAP/PROSEMIRROR OVER CONTENTEDITABLE?
+   "I started with raw contentEditable and document.execCommand, but quickly
+   hit limitations — inconsistent browser behavior, no structured document
+   model, and poor extensibility. TipTap wraps ProseMirror, giving me a
+   proper schema-based document model, transaction system, and plugin
+   architecture. This let me build features like tables, nested lists, and
+   Find & Replace that would be extremely fragile with raw contentEditable."
+
+2. CUSTOM EXTENSIONS
+   "I needed font-size control and block indentation that TipTap doesn't
+   ship out of the box. I wrote custom ProseMirror extensions that hook
+   into the schema's global attributes and command system — for example,
+   my FontSize extension adds a fontSize attribute to the textStyle mark
+   and exposes setFontSize/unsetFontSize commands."
+
+3. PERFORMANCE CONSIDERATIONS
+   "For Find & Replace, instead of doing DOM-level search and manipulation,
+   I work at the ProseMirror document model level — traversing the doc tree
+   to find text positions and using transactions to make replacements. This
+   keeps the editor's undo history intact and avoids DOM thrashing."
+
+4. STATE MANAGEMENT
+   "I kept state management lean — React's useState/useCallback for UI
+   state, custom hooks for cross-cutting concerns (auto-save, stats,
+   version history), and TipTap's editor instance as the single source of
+   truth for document content. No Redux or Zustand needed."
+
+5. DESIGN SYSTEM
+   "I built a CSS custom properties design system with 50+ tokens covering
+   colors, spacing, typography, and animations. Every component references
+   these tokens, so changing the theme is a single-file edit. The
+   glassmorphism effect uses backdrop-filter with layered rgba backgrounds."
+
+
+================================================================================
