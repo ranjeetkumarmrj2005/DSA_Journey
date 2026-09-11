@@ -3,8 +3,7 @@
 
 
 bool cmp(pair<int,int>& a, pair<int,int>& b) {
-    return (double)a.first / a.second >
-           (double)b.first / b.second;
+    return (double)a.first / a.second > (double)b.first / b.second;
 }
 
 class Solution {
