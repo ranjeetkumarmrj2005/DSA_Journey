@@ -1,0 +1,39 @@
+
+
+
+
+class myStack {
+  public:
+    int top=0;
+    vector<int>v;
+    int size=0;
+    myStack(int n) {
+        this->size=n;
+    }
+
+    bool isEmpty() {
+        if(v.size()==0) return true;
+        else return false;
+    }
+
+    bool isFull() {
+        if(v.size()==size) return true;
+        else return false;
+    }
+
+    void push(int x) {
+        v.push_back(x);
+        top=x;
+    }
+
+    void pop() {
+        if(v.size()>0) v.pop_back();
+        if(v.size()>0) top=v.back();
+        
+    }
+
+    int peek() {
+        if(v.size()!=0) return top;
+        else return -1;
+    }
+};
