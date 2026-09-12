@@ -1,0 +1,28 @@
+
+
+
+class Solution {
+public:
+    void helper(string &s,int i,int j,string &ans){
+        for(int k=i+1;k<j;k++){
+            ans.push_back(s[k]);
+        }
+    }
+    string removeOuterParentheses(string s) {
+        int n=s.size();
+        int start=0;
+        string ans="";
+        stack<char>st;
+        for(int i=0;i<n;i++){
+            if(s[i]=='(') st.push(s[i]);
+            else {
+                st.pop();
+                if(st.size()==0) {
+                    helper(s,start,i,ans);
+                    start=i+1;
+                }
+            }
+        }
+        return ans;
+    }
+};
