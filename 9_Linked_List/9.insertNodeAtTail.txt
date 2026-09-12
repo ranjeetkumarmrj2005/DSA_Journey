@@ -1,0 +1,46 @@
+
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Node{
+    public:
+    Node* next;
+    int data;
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+};
+
+Node* insertNodeAtTail(Node* head,int data){
+    Node* temp=new Node(data);
+    if(head==NULL) return temp;
+    Node* tail=head;
+    while(tail->next!=NULL){
+        tail=tail->next;
+    }
+    tail->next=temp;
+    return head;
+}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin>>n;
+    Node* head=NULL;
+    for(int i=0;i<n;i++){
+        int data;
+        cin>>data;
+        head=insertNodeAtTail(head,data);
+    }
+    while(head!=NULL){
+        cout<<head->data<<endl;
+        head=head->next;
+    }
+    return 0;
+}
