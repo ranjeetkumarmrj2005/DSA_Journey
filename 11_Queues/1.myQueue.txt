@@ -1,0 +1,59 @@
+
+
+
+class myQueue {
+  public:
+    vector<int>v;
+    int i;
+    int j;
+    int capacity;
+    myQueue(int n) {
+        // Define Data Structures
+        this->i=0;
+        this->j=0;
+        v.resize(n);
+        this->capacity=n;
+    }
+
+    bool isEmpty() {
+        // check if the queue is empty
+        if(j-i==0) return true;
+        else return false;
+    }
+
+    bool isFull() {
+        // check if the queue is full
+        if(j-i==capacity) return true;
+        else return false;
+    }
+
+    void enqueue(int x) {
+        // Adds an element x at the rear of the queue.
+        if(j-i<capacity){
+            v[j]=x;
+            j++;
+        }
+        
+    }
+
+    void dequeue() {
+        // Removes the front element of the queue.
+        while(i<j-1){
+           v[i]=v[i+1]; 
+           i++;
+        }
+        i=0;
+        j--;
+    }
+
+    int getFront() {
+        // Returns the front element of the queue.
+        if(j-i>0) return v[i];
+        else return -1;
+    }
+    int getRear() {
+        // Return the last element of queue
+        if(j-i>0) return v[j-1];
+        else return -1;
+    }
+};
