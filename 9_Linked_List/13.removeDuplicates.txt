@@ -1,0 +1,23 @@
+
+
+
+class Solution {
+  public:
+    Node* removeDuplicates(Node* head) {
+        if(head==NULL || head->next==NULL) return head;
+        unordered_map<int,int>m;
+        int i=1;
+        Node* temp=head;
+        m[head->data]=i++;
+        while(temp->next!=NULL){
+            if(m.find(temp->next->data)!=m.end()){
+                temp->next=temp->next->next;
+            }
+            else {
+                temp=temp->next;
+                m[temp->data]=i++;
+            }
+        }
+        return head;
+    }
+};
