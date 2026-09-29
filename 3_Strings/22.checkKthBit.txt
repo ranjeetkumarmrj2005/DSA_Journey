@@ -1,0 +1,20 @@
+
+
+
+class Solution {
+  public:
+    bool checkKthBit(int n, int k) {
+        //  code here
+        string ans="";
+        while(n>0){
+            int rem=n%2;
+            string temp=to_string(rem);
+            ans=temp+ans;
+            n=n/2;
+        }
+        int m=ans.size();
+        int j=m-k-1;
+        if(ans[j]=='1') return true;
+        else return false;
+    }
+};
