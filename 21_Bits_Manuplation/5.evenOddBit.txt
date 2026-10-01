@@ -1,0 +1,24 @@
+
+
+
+class Solution {
+public:
+    vector<int> evenOddBit(int n) {
+        string ans="";
+        while(n>0){
+            int rem=n%2;
+            ans=to_string(rem)+ans;
+            n=n/2;
+        }
+        n=ans.size();
+        int even=0;
+        int odd=0;
+        for(int i=0;i<ans.size();i++){
+            if(ans[n-1-i]=='1'){
+                if(i%2==0) even++;
+                else odd++;
+            }
+        }
+        return {even, odd};
+    }
+};
