@@ -1,0 +1,27 @@
+
+
+
+class Solution {
+public:
+    int minBitFlips(int start, int goal) {
+        string ans1="";
+        string ans2="";
+        while(start>0){
+            ans1=to_string(start%2)+ans1;
+            start=start/2;
+        }
+        while(goal>0){
+            ans2=to_string(goal%2)+ans2;
+            goal=goal/2;
+        }
+        while(ans1.size()!=ans2.size()){
+            if(ans1.size()>ans2.size()) ans2=to_string(0)+ans2;
+            else ans1=to_string(0)+ans1;
+        }
+        int count=0;
+        for(int i=ans1.size()-1;i>=0;i--){
+            if(ans1[i]!=ans2[i]) count++;
+        }
+        return count;
+    }
+};
