@@ -1,0 +1,17 @@
+
+
+
+class Solution {
+  public:
+    bool isMultipleOf3(string& s) {
+        // code here
+        int countSum=0;
+        int countOdd=0;
+        int n=s.size();
+        for(int i=n-1;i>=0;i--){
+            if(s[n-i-1]=='1' && (n-i-1)%2==0) countSum++;
+            if(s[n-i-1]=='1' && (n-i-1)%2!=0) countOdd++;
+        }
+        return (countSum-countOdd)%3==0;
+    }
+};
