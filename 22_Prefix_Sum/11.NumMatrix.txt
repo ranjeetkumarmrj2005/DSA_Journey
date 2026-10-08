@@ -1,7 +1,5 @@
 
 
-
-
 class NumMatrix {
 public:
     vector<vector<int>>matrix;
