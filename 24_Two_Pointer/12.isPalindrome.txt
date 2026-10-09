@@ -19,7 +19,7 @@ public:
     }
 };
 
-
+// this is the good problem for the understanding pourpose of two pointer
 isalpha(c);     // alphabet?
 isdigit(c);     // digit?
 isalnum(c);     // alphabet OR digit?
