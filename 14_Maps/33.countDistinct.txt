@@ -1,0 +1,15 @@
+
+
+
+class Solution {
+  public:
+    int countDistinct(vector<int>& nums) {
+        // code here
+        int n=nums.size();
+        unordered_map<int,int>m;
+        for(int i=0;i<n;i++){
+            m[nums[i]]++;
+        }
+        return m.size();
+    }
+};
