@@ -1,0 +1,41 @@
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head){
+        ListNode* p=NULL;
+        ListNode* c=head;
+        ListNode* n=head;
+        while(n!=NULL){
+            n=n->next;
+            c->next=p;
+            p=c;
+            c=n;
+        }
+        return p;
+    }
+    ListNode* swapPairs(ListNode* head) {
+        if(head==NULL || head->next==NULL) return head;
+        ListNode* dummy =new ListNode(-1);
+        ListNode* d=dummy;
+        ListNode* temp=head;
+        ListNode* a=head;
+        ListNode* b=head->next;
+        ListNode* c=head->next->next;
+        while(temp!=NULL && temp->next!=NULL){
+            b->next=NULL;
+            b=reverseList(a);
+            d->next=b;
+            d=a;
+            if(c!=NULL && c->next!=NULL){
+                a->next=c;
+                a=a->next;
+                b=c->next;
+                c=c->next->next;
+                temp=a;
+            }
+        }
+        a->next=c;
+        return dummy->next;
+    }
+};
