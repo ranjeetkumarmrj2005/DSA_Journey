@@ -1,0 +1,24 @@
+
+
+
+
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+
+        ListNode* tail=NULL;
+        ListNode* tempHead=head;
+        while(tempHead!=NULL){
+            ListNode* temp=new ListNode(tempHead->val);
+            temp->next=tail;
+            tail=temp;
+            tempHead=tempHead->next;
+        }
+        while(tail!=NULL){
+            if(tail->val!=head->val) return false;
+            tail=tail->next;
+            head=head->next;
+        }
+        return true;
+    }
+};
