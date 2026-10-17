@@ -1,0 +1,42 @@
+
+
+
+
+class Solution {
+public:
+    ListNode* reverse(ListNode* head){
+        ListNode* p=NULL;
+        ListNode* c=head;
+        ListNode* n=head;
+        while(c!=NULL){
+            n=n->next;
+            c->next=p;
+            p=c;
+            c=n;
+        }
+        return p;
+    }
+    void reorderList(ListNode* head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        ListNode* newHead=slow->next;
+        slow->next=NULL;
+
+        ListNode* a=head;
+        ListNode* b=head->next;
+        ListNode* c=reverse(newHead);
+        while(b!=NULL && c!=NULL){
+            a->next=c;
+            a=a->next;
+            c=c->next;
+            a->next=b;
+            a=a->next;
+            b=b->next;
+        }
+        return ;
+    }
+};
