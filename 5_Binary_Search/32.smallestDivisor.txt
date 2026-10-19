@@ -1,0 +1,38 @@
+
+
+
+class Solution {
+public:
+    int helper(vector<int>&nums,int mid){
+        int n=nums.size();
+        int count=0;
+        for(int i=0;i<n;i++){
+            double x=(double)nums[i]/mid;
+            if(floor(x)==ceil(x)) count=count+x;
+            else count=count+floor(x)+1;
+        }
+        return count;
+    }
+    int smallestDivisor(vector<int>& nums, int threshold) {
+        int n=nums.size();
+        int mn=INT_MAX;
+        int mx=INT_MIN;
+        for(int i=0;i<n;i++){
+            mn=min(mn,nums[i]);
+            mx=max(mx,nums[i]);
+        }
+        int low=1;
+        int high=mx;
+        int ans=high;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            int count=helper(nums,mid);
+            if(count<=threshold && mid<=ans) {
+                ans=mid;
+                high=mid-1;
+            }
+            else low=mid+1;
+        }
+        return ans;
+    }
+};
