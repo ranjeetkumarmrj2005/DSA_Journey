@@ -1,0 +1,30 @@
+
+
+
+
+class Solution {
+public:
+    double helper(vector<int>& nums, int mid) {
+        double time = 0.0;
+        int n = nums.size();
+        for (int i = 0; i < n; i++) {
+            if (i == n - 1) time =time+(double)nums[i] / mid;
+            else time =time+ceil((double)nums[i] / mid);
+        }
+        return time;
+    }
+
+    int minSpeedOnTime(vector<int>& nums, double hour) {
+        int low = 1, high = INT_MAX;
+        int ans = -1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (helper(nums, mid) <= hour) {
+                ans = mid;
+                high = mid - 1;
+            } 
+            else low = mid + 1;
+        }
+        return ans;
+    }
+};
