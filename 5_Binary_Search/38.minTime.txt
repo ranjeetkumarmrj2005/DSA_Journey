@@ -1,0 +1,43 @@
+
+
+
+class Solution {
+  public:
+    int helper(vector<int>&nums,int mid){
+        int n=nums.size();
+        int count=1;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            if(sum+nums[i]<=mid){
+                sum=sum+nums[i];
+            }
+            else{
+                count++;
+                sum=nums[i];
+            }
+        }
+        return count;
+    }
+    int minTime(vector<int>& nums, int k) {
+        int n=nums.size();
+        int mx=INT_MIN;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            mx=max(mx,nums[i]);
+            sum=sum+nums[i];
+        }
+        int ans=mx;
+        int low=mx;
+        int high=sum;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(helper(nums,mid)<=k){
+                ans=mid;
+                high=mid-1;
+            }
+            else low=mid+1;
+        }
+        return ans;
+        
+    }
+};
