@@ -1,0 +1,44 @@
+
+
+
+class Solution {
+  public:
+    int kthElement(vector<int> &nums1, vector<int> &nums2, int k) {
+        int n1=nums1.size();
+        int n2=nums2.size();
+        vector<int>v(n1+n2);
+        int i=0;
+        int j=0;
+        int x=0;
+        while(i<n1 && j<n2){
+            if(nums1[i]<nums2[j]){
+                v[x]=nums1[i];
+                i++;
+                x++;
+            }
+            else {
+                v[x]=nums2[j];
+                j++;
+                x++;
+            }
+        }
+        for(;i<n1;i++){
+            v[x]=nums1[i];
+            x++;
+        }
+        for(;j<n2;j++){
+            v[x]=nums2[j];
+            x++;
+        }
+        
+        int low=0;
+        int high=n1+n2;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(mid+1==k) return v[mid];
+            else if(mid+1<k) low=mid+1;
+            else high=mid-1;
+        }
+        return 0;
+    }
+};
