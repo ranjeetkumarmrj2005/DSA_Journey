@@ -1,0 +1,23 @@
+
+
+
+class Solution {
+  public:
+    int longestSubarray(vector<int>& nums, int k) {
+        int n=nums.size();
+        int sum=0;
+        int count=0;
+        unordered_map<int,int>m;
+        m[0]=-1;
+        for(int i=0;i<n;i++){
+            sum=sum+nums[i];
+            if(m.find(sum-k)!=m.end()){
+                count=max(count,i-m[sum-k]);
+            }
+            if(m.find(sum)==m.end()){
+                m[sum]=i;
+            }
+        }
+        return count;
+    }
+};
