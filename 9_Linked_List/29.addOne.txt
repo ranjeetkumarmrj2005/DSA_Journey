@@ -1,0 +1,48 @@
+
+
+
+class Solution {
+  public:
+    Node* reverseList(Node* head) {
+        Node* PREV=NULL;
+        Node* CURR=head;
+        Node* NEXT=head;
+        while(CURR!=NULL){
+            NEXT=NEXT->next;
+            CURR->next=PREV;
+            PREV=CURR;
+            CURR=NEXT;
+        }
+        return PREV;
+    }
+    
+    Node* addOne(Node* head) {
+    head=reverseList(head);
+    Node* temp=head;
+    bool flag=false;
+    while(temp!=NULL){
+        if(temp->data==9){
+            temp->data=0;
+            temp=temp->next;
+            flag=false;
+        }
+        else {
+            temp->data=temp->data+1;
+            flag=true;
+            break;
+        }
+    }
+    if(flag==true) {
+        return head=reverseList(head);
+    }
+    else {
+        temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        Node* last=new Node(1);
+        temp->next=last;
+    }
+    return head=reverseList(head);
+    }
+};
