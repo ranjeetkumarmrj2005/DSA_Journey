@@ -1,6 +1,4 @@
 
-
-
 class Solution {
   public:
     Node* reverseList(Node* head) {
@@ -36,13 +34,10 @@ class Solution {
         return head=reverseList(head);
     }
     else {
-        temp=head;
-        while(temp->next!=NULL){
-            temp=temp->next;
-        }
         Node* last=new Node(1);
-        temp->next=last;
+        last->next=head;
+        return last;
     }
-    return head=reverseList(head);
+    return NULL;
     }
 };
