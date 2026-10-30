@@ -1,0 +1,49 @@
+
+
+
+class Solution {
+public:
+    Node* segregate(Node* head) {
+        Node* zero = new Node(-1);
+        Node* farzizero = zero;
+        Node* one = new Node(-1);
+        Node* farzione = one;
+        Node* two = new Node(-1);
+        Node* farzitwo = two;
+
+        Node* temp = head;
+        while (temp != NULL) {
+            Node* nextNode = temp->next; // Save the next node so we don't lose the list
+            temp->next = NULL;           // Isolate the current node to avoid cycles
+
+            if (temp->data == 0) {
+                zero->next = temp;
+                zero = zero->next; // `zero` becomes the tail of the 0s list
+            } 
+            else if (temp->data == 1) {
+                one->next = temp;
+                one = one->next;   // `one` becomes the tail of the 1s list
+            } 
+            else {
+                two->next = temp;
+                two = two->next;   // `two` becomes the tail of the 2s list
+            }
+            temp = nextNode;
+        }
+
+        // Stitch the lists together:
+        if (farzione->next != NULL) {
+            // If 1s exist, connect 0s tail to 1s head, and 1s tail to 2s head
+            zero->next = farzione->next;
+            one->next = farzitwo->next;
+        } else {
+            // If no 1s exist, connect 0s tail directly to 2s head
+            zero->next = farzitwo->next;
+        }
+
+        // Return the correct new head
+        if (farzizero->next != NULL) return farzizero->next;
+        if (farzione->next != NULL) return farzione->next;
+        return farzitwo->next;
+    }
+};
