@@ -1,0 +1,31 @@
+
+
+
+
+
+class Solution {
+  public:
+    Node* divide(Node* head) {
+        Node* even=new Node(-1);
+        Node* newHeadeven=even;
+        Node* odd=new Node(-1);
+        Node* newHeadodd=odd;
+        Node* temp=head;
+        while(temp!=NULL){
+            Node* farzi=temp;
+            temp=temp->next;
+            farzi->next=NULL;
+            if((farzi->data)%2==0){
+                even->next=farzi;
+                even=even->next;
+            }
+            else{
+                odd->next=farzi;
+                odd=odd->next;
+            }
+        }
+        //odd->next=NULL;
+        even->next=newHeadodd->next;
+        return newHeadeven->next;
+    }
+};
