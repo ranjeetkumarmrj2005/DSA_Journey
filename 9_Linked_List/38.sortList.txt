@@ -1,0 +1,22 @@
+
+
+
+class Solution {
+public:
+    ListNode* sortList(ListNode* head) {
+       if(head==NULL || head->next==NULL) return head;
+       priority_queue< int,vector<int>,greater<int> >pq;
+       ListNode* temp=head;
+       while(temp!=NULL){
+            pq.push(temp->val);
+            temp=temp->next;
+        }
+        temp=head;
+        while(temp!=NULL){
+            temp->val=pq.top();
+            temp=temp->next;
+            pq.pop();
+        }
+        return head;
+    }
+};
