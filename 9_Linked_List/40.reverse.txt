@@ -1,0 +1,33 @@
+
+
+/* Structure of Doubly Linked List Node
+class Node {
+  public:
+    int data;
+    Node *next;
+    Node *prev;
+
+    Node(int val) {
+        data = val;
+        next = nullptr;
+        prev = nullptr;
+    }
+};
+
+*/
+class Solution {
+  public:
+    Node *reverse(Node *head) {
+        Node* i=head;
+        Node* j=head;
+        while(j->next!=NULL){
+            j=j->next;
+        }
+        while(i != j && i->prev != j){
+            swap(i->data,j->data);
+            i=i->next;
+            j=j->prev;
+        }
+        return head;
+    }
+};
