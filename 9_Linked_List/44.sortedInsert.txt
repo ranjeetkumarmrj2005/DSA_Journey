@@ -1,0 +1,47 @@
+
+
+/* Structure of the node of the DLL
+class Node {
+  public:
+    int data;
+    Node* prev;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        prev = nullptr;
+        next = nullptr;
+    }
+};
+*/
+class Solution {
+  public:
+    Node* sortedInsert(Node* head, int x) {
+        Node* newHead=new Node(-1);
+        newHead->next=head;
+        head->prev=newHead;
+        Node* temp=newHead;
+        while(head!=NULL){
+            if(head->data<x){
+                head=head->next;
+                temp=temp->next;
+            }
+            else{
+                Node* farzi=new Node(x);
+                farzi->prev=temp;
+                farzi->next=head;
+                temp->next=farzi;
+                head->prev=farzi;
+                break;
+            }
+        }
+        if(head==NULL){
+            Node* farzi=new Node(x);
+            temp->next=farzi;
+            farzi->prev=temp;
+        }
+        newHead=newHead->next;
+        newHead->prev=NULL;
+        return newHead;
+    }
+};
