@@ -1,0 +1,38 @@
+
+
+
+/* Structure of Doubly Linked List Node
+class Node {
+  public:
+    int data;
+    Node *next;
+    Node *prev;
+
+    Node(int val) {
+        data = val;
+        next = nullptr;
+        prev = nullptr;
+    }
+}; */
+
+class Solution {
+  public:
+    vector<vector<int>> givenSumPairs(Node* head, int target) {
+        unordered_map<int,bool>m;
+        vector<vector<int>>v;
+        Node* temp=head;
+        while(temp!=NULL){
+            m[temp->data]=true;
+            temp=temp->next;
+        }
+        temp=head;
+        while(temp!=NULL){
+            if(m.find(target-temp->data)!=m.end() && temp->data!=target-temp->data){
+                v.push_back({temp->data,target-temp->data});
+                m.erase(temp->data);
+            }
+            temp=temp->next;
+        }
+        return v;
+    }
+};
