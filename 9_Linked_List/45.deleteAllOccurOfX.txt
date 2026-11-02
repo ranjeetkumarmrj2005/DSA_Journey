@@ -1,0 +1,44 @@
+
+
+
+/*Structure of the doubly linked list  Node 
+class Node {
+  public:
+    int data;
+    Node* next;
+    Node* prev;
+
+    Node(int x) {
+        data = x;
+        next = nullptr;
+        prev = nullptr;
+    }
+};*/
+
+class Solution {
+  public:
+    Node* deleteAllOccurOfX(Node* head, int x) {
+        Node* newHead=new Node(-1);
+        newHead->next=head;
+        head->prev=newHead;
+        Node* temp=newHead;
+        while(head!=NULL){
+            if(head->data==x){
+                head=head->next;
+            }
+            else{
+                
+                temp->next=head;
+                head->prev=temp;
+                head=head->next;
+                temp=temp->next;
+            }
+        }
+        Node* farzi=temp->next;
+        temp->next=NULL;
+        if(farzi!=NULL) farzi->prev=NULL;
+        newHead=newHead->next;
+        newHead->prev=NULL;
+        return newHead;
+    }
+};
