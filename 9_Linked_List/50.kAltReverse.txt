@@ -1,0 +1,52 @@
+
+
+
+/* Linked List Node Structure
+class Node {
+  public:
+    int data;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};*/
+
+class Solution {
+  public:
+    Node* helper(Node* head, int k,int x){
+        if(head==NULL) return head;
+        
+        Node* p=NULL;
+        Node* c=head;
+        Node* n=head;
+        int count=0;
+        
+        if(x%2==0){
+            while(c!=NULL && count<k){
+                n=n->next;
+                c->next=p;
+                p=c;
+                c=n;
+                count++;
+            }
+            head->next=helper(n,k,x+1);
+            return p;
+        }
+        else{
+            while(c!=NULL && count<k-1){
+                c=c->next;
+                count++;
+            }
+            if(c!=NULL) c->next=helper(c->next,k,x+1);
+            return head;
+        }
+    }
+    Node* kAltReverse(Node* head, int k) {
+        int x=0;
+        return helper(head,k,x);
+        
+        
+    }
+};
