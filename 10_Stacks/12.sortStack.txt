@@ -1,0 +1,23 @@
+
+
+
+class Solution {
+  public:
+    void insertsorted(stack<int>&st,int x){
+        if(st.size()==0 || st.top()<=x){
+            st.push(x);
+            return;
+        }
+        int temp=st.top();
+        st.pop();
+        insertsorted(st,x);
+        st.push(temp);
+    }
+    void sortStack(stack<int> &st) {
+        if(st.size()==0) return;
+        int x=st.top();
+        st.pop();
+        sortStack(st);
+        insertsorted(st,x);
+    }
+};
