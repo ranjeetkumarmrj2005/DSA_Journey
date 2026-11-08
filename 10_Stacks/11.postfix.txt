@@ -1,0 +1,29 @@
+
+
+class Solution {
+public:
+    int helper(int num2,int num1,char ch){
+        if(ch=='+') return num1+num2;
+        else if(ch=='-') return num1-num2;
+        else if(ch=='*') return num1*num2;
+        else return num1/num2;
+    }
+    int evalRPN(vector<string>& tokens) {
+        stack<int>operand;
+        int n=tokens.size();
+        for(int i=0;i<n;i++){
+            if(tokens[i].size()>1 || isdigit(tokens[i][0])){
+                operand.push(stoi(tokens[i]));
+            }
+            else{
+                int num2=operand.top();
+                operand.pop();
+                int num1=operand.top();
+                operand.pop();
+                int ans=helper(num2,num1,tokens[i][0]);
+                operand.push(ans);
+            }
+        }
+        return operand.top();
+    }
+};
