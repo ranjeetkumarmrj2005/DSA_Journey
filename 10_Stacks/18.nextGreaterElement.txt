@@ -1,0 +1,31 @@
+
+
+
+
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        int n1=nums1.size();
+        int n2=nums2.size();
+        vector<int>v1(n1,-1);
+        vector<int>v2(n2,-1);
+        stack<int>st2;
+        st2.push(nums2[n2-1]);
+
+        for(int i=n2-2;i>=0;i--){
+            while(st2.size()>0 && nums2[i]>st2.top()){
+                st2.pop();
+            }
+            if(st2.size()>0) v2[i]=st2.top();
+            st2.push(nums2[i]);
+        }
+        unordered_map<int,int>m;
+        for(int i=0;i<n2;i++){
+            m[nums2[i]]=v2[i];
+        }
+        for(int i=0;i<n1;i++){
+            v1[i]=m[nums1[i]];
+        }
+        return v1;
+    }
+};
