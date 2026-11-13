@@ -1,20 +1,18 @@
-
-
 class Solution {
   public:
     vector<int> countGreater(vector<int> &nums, vector<int> &indices) {
         int n=nums.size();
-        vector<int>v(n,0);
-        stack< pair<int,int >st;
-        st.push({nums[n-1],0});
-        for(int i=n-2;i>=0;i--){
+        int m=indices.size();
+        vector<int>v;
+        for(int i=0;i<m;i++){
             int count=0;
-            while(st.size()>0 && nums[i]<st.top()){
-                count=count+st.top().second+1;
-                st.pop();
+            int idx=indices[i];
+            int val=nums[idx];
+            for(int j=idx+1;j<n;j++){
+                if(nums[j]>val) count++;
             }
-            v[i]=count;
-            st.push({nums[i],count});
+            v.push_back(count);
         }
+        return v;
     }
 };
