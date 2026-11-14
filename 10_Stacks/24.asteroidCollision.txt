@@ -1,0 +1,30 @@
+
+
+class Solution {
+public:
+    vector<int> asteroidCollision(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>v;
+        v.push_back(nums[n-1]);
+        for(int i=n-2;i>=0;i--){
+            bool flag=true;
+            while(v.size()>0 && nums[i]>0 && v.back()<0){
+                if(nums[i]>abs(v.back())){
+                    v.pop_back();
+                }
+                else if(nums[i]==abs(v.back())){
+                    v.pop_back();
+                    flag=false;
+                    break;
+                }
+                else{
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag==true) v.push_back(nums[i]);
+        }
+        reverse(v.begin(),v.end());
+        return v;
+    }
+};
