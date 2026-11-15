@@ -1,0 +1,31 @@
+
+
+class Solution {
+public:
+    string smallestSubsequence(string s) {
+        unordered_map<char,int>m;
+        unordered_map<char,bool>p;
+        stack<int>st;
+        int n=s.size();
+        for(int i=0;i<n;i++){
+            m[s[i]]++;
+            p[s[i]]=false;
+        }
+        for(int i=0;i<n;i++){
+            while(st.size()>0 && s[i]<st.top() && m[st.top()]>0 && p[s[i]]==false){
+                p[st.top()]=false;
+                st.pop();
+            }
+            if(p[s[i]]==false) st.push(s[i]);
+            m[s[i]]--;
+            p[s[i]]=true;
+        }
+        string ans="";
+        while(st.size()>0){
+            ans.push_back(st.top());
+            st.pop();
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
