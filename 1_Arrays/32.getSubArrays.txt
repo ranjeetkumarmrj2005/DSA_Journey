@@ -1,0 +1,20 @@
+
+
+class Solution {
+  public:
+    vector<vector<int>> getSubArrays(vector<int>& nums) {
+        vector<vector<int>>ans;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                vector<int>v;
+                for(int k=i;k<=j;k++){
+                    v.push_back(nums[k]);
+                }
+                ans.push_back(v);
+            }
+            
+        }
+    return ans;   
+    }
+};
