@@ -30,6 +30,7 @@ public:
     }
     return max_area;
     }
+    // very beatiful problem
     int maximalRectangle(vector<vector<char>>& matrix) {
         int rows=matrix.size();
         int cols=matrix[0].size();
